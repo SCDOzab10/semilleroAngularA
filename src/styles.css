@@ -1,0 +1,5 @@
+body {
+  background-image: url('../src/assets/rick-and-morty-screaming-sun-background.png');
+  background-size:cover;
+  background-attachment: fixed;
+}

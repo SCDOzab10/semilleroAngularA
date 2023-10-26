@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let item of paginatedData">
+      <div class="card mb-4">
+        <img [src]="item.image" alt="" style="border-radius: 30%;">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Especie: {{ item.species }}</li>
+          <li class="list-group-item">Número de elemento: {{ item.id }}</li>
+          <li class="list-group-item">Genero: {{ item.gender}} </li>
+          <li class="list-group-item">Estado: {{ item.status}} </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="filter-buttons">
+  <button (click)="filterByGender('unknown')">Unknown</button>
+  <button (click)="filterByGender('Male')">Male</button>
+  <button (click)="filterByGender('Female')">Female</button>
+
+</div>
+
+<div class="pagination">
+  <button
+    *ngFor="let page of totalPagesArray()"
+    [class.active]="page === currentPage"
+    (click)="onPageChange(page)"
+  >{{ page }}</button>
+</div>
